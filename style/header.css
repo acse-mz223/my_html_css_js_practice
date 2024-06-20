@@ -1,5 +1,5 @@
 .header-div{
-    background-image: url('image/header_bg.webp');
+    background-image: url('../image/header_bg.webp');
     height: 180px;
     font-size: 15px;
 }

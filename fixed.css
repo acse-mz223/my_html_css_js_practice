@@ -1,0 +1,30 @@
+.fixed-change{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(187, 187, 187);
+    background-color: white;
+    border-radius: 5px;
+    writing-mode: vertical-lr;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 310px;
+    padding: 4px;
+}
+
+.fixed-change svg{
+    margin-bottom: 4px;
+}
+
+.fixed-latter{
+    display: flex;
+    border: 1px solid rgb(187, 187, 187);
+    background-color: white;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    padding: 4px;
+    right: 20px;
+    bottom: 20%;
+}

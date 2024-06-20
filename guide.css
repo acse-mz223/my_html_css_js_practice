@@ -1,0 +1,100 @@
+.guide{
+    margin: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(226, 255, 145);
+    height: 100px;
+
+}
+
+.guide-like-icon{
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 130px;
+}
+
+.guide-like{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.guide-like:hover{
+    cursor: pointer;
+    
+} 
+
+.guide-like-icon-1{
+    border: none;
+    border-radius: 20px;
+    width: 40px;
+    margin-bottom: 5px;
+    
+}
+
+.guide-like-icon-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(252, 142, 160);
+    border: none;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.guide-topics{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 15px;
+    border-right: 1px solid rgb(138, 138, 138);
+    padding-right: 30px;
+    padding-left: 0;
+
+}
+
+.guide-topics-button{
+    color: rgb(85, 85, 85);
+    font-size: 15px;
+    background-color: rgb(243, 243, 243);
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    
+}
+
+.guide-others{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: rgb(43, 43, 43);
+    font-size: 15px;
+    column-gap: 2px;
+}
+
+.guide-others svg{
+    width: 20px;
+    fill: rgb(43, 43, 43);
+}
+
+.guide-others div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+
+.guide-others div:hover{
+    cursor: pointer;
+    color: rgb(0, 123, 239);
+    fill: rgb(0, 123, 239);
+} 
+
+.guide-others div div{
+    display: inline-block;
+    padding-top: 7px;
+}

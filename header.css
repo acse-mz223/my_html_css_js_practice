@@ -1,0 +1,137 @@
+.header-div{
+    background-image: url('image/header_bg.webp');
+    height: 180px;
+    font-size: 15px;
+}
+
+.header-bar{
+    background-color: rgb(187, 148, 223);
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.left-header{
+    display: flex;
+    flex:1.5;
+    background-color: rgb(255, 146, 146);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-header-icon{
+    color: white;
+    display: inline-block;
+    transition: tranform 0.3s;
+} 
+
+.left-header-icon:hover{
+    cursor: pointer;
+    animation: bounce 0.3s;
+} 
+
+.left-header-icon-defaultEnter div{
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.left-header-icon-defaultEnter{
+    display: flex;
+    align-items: center;
+}
+
+.middle-header{
+    display: flex;
+    flex:1;
+    align-items: center;
+    justify-content: space-around;
+
+
+}
+
+.input-div{
+    display: flex;
+    background-color: rgb(228, 228, 228);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 5px 10px;
+    border: 1px solid rgb(120, 120, 120);
+    border-radius: 10px;
+    width: 100%;
+
+}
+
+.input-dox{
+    background-color: rgba(181, 40, 40, 0.594);
+    height: 30px;
+    width: 250px;
+    border: none;
+    width: 95%;
+}
+
+.input-button{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.user-image{
+    width: 40px;
+    border: 2px solid white ;
+    border-radius: 21px;
+}
+
+.user-image:hover{
+    cursor: pointer;
+    
+} 
+
+.right-header{
+    background-color: rgb(255, 151, 151);
+    flex:35px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.right-header svg, .right-header div{
+    color: white;
+}
+
+.right-header div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.right-header > div:hover{
+    cursor: pointer;
+    animation: bounce 0.3s;
+    
+} 
+
+.header-button{
+    background-color: rgb(252, 142, 160);
+    border: none;
+    height: 30px;
+    width: 80px;
+    margin: 0px 5px;
+    border-radius: 8px;
+}
+
+.header-button div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.image-bilibili{
+    width: 170px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+

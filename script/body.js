@@ -24,21 +24,23 @@ function getBodyLargeDot(){
 // item-large html
 function getBodyLargeHtml(){
     let bodyHtml = `
-        <div class="item-large">
-            <div class="item-large-images js-item-large-images">
-            ${getBodyLargeImage()}
-            </div>
-            <div class="item-large-footer">
-                <div class="item-large-footer-line1">
-                    <p class="js-item-large-footer-line1-title">${largeVideos[0].title}</p>
-                    <div class="item-large-footer-line1-buttons">
-                        <button class="item-large-footer-line1-button js-item-large-footer-line1-button-left">&lt;</button>
-                        <button class="item-large-footer-line1-button js-item-large-footer-line1-button-right">&gt;</button>
-                    </div>
+        <div class='item-large-div'>
+            <div class="item-large">
+                <div class="item-large-images js-item-large-images">
+                ${getBodyLargeImage()}
                 </div>
-                <div class="item-large-footer-line2">
-                    ${getBodyLargeDot()}
-                </div>  
+                <div class="item-large-footer">
+                    <div class="item-large-footer-line1">
+                        <p class="js-item-large-footer-line1-title">${largeVideos[0].title}</p>
+                        <div class="item-large-footer-line1-buttons">
+                            <button class="item-large-footer-line1-button js-item-large-footer-line1-button-left">&lt;</button>
+                            <button class="item-large-footer-line1-button js-item-large-footer-line1-button-right">&gt;</button>
+                        </div>
+                    </div>
+                    <div class="item-large-footer-line2">
+                        ${getBodyLargeDot()}
+                    </div>  
+                </div>
             </div>
         </div>
     `;
@@ -73,56 +75,72 @@ function getBodyHtml(){
 }
 
 document.querySelector('.body').innerHTML = getBodyHtml();
+document.querySelector('.item-large-footer').style.backgroundColor = largeVideos[0].color;
 
 // large video button setup
 let largeVideosNumber = largeVideos.length;
 let largeVideosIndex = 0;
+// left button
+function leftBottonRoll(){
+    // dot change
+    let largeVideoDot = document.querySelector(`.js-item-large-footer-line2-dot-${largeVideosIndex}`);
+    largeVideoDot.classList.remove('item-large-footer-line2-dot-after');
+    largeVideoDot.classList.add('item-large-footer-line2-dot-before');
+    // roll
+    largeVideosIndex --;
+    largeVideosIndex = (largeVideosIndex + largeVideosNumber) % largeVideosNumber ;
+    // image
+    let largeVideosDiv = document.querySelector('.js-item-large-images');
+    largeVideosDiv.style.transform = `translateX(-${largeVideosIndex * 100}%)`;
+    // dot change
+    largeVideoDot = document.querySelector(`.js-item-large-footer-line2-dot-${largeVideosIndex}`);
+    largeVideoDot.classList.remove('item-large-footer-line2-dot-before');
+    largeVideoDot.classList.add('item-large-footer-line2-dot-after');
+    // title
+    let title = document.querySelector('.js-item-large-footer-line1-title');
+    title.innerHTML = largeVideos[largeVideosIndex].title;
+    // bg
+    let infoDiv = document.querySelector('.item-large-footer');
+    infoDiv.style.backgroundColor = largeVideos[largeVideosIndex].color;
+}
+
 document.querySelector('.js-item-large-footer-line1-button-left').addEventListener(
     'click',() =>{
-        // dot change
-        let largeVideoDot = document.querySelector(`.js-item-large-footer-line2-dot-${largeVideosIndex}`);
-        largeVideoDot.classList.remove('item-large-footer-line2-dot-after');
-        largeVideoDot.classList.add('item-large-footer-line2-dot-before');
-        // roll
-        largeVideosIndex --;
-        largeVideosIndex = (largeVideosIndex + largeVideosNumber) % largeVideosNumber ;
-        // image
-        let largeVideosDiv = document.querySelector('.js-item-large-images');
-        largeVideosDiv.style.transform = `translateX(-${largeVideosIndex * 100}%)`;
-        // dot change
-        largeVideoDot = document.querySelector(`.js-item-large-footer-line2-dot-${largeVideosIndex}`);
-        largeVideoDot.classList.remove('item-large-footer-line2-dot-before');
-        largeVideoDot.classList.add('item-large-footer-line2-dot-after');
-        // title
-        let title = document.querySelector('.js-item-large-footer-line1-title');
-        title.innerHTML = largeVideos[largeVideosIndex].title;
-        // bg
-        let infoDiv = document.querySelector('.item-large-footer');
-        infoDiv.style.backgroundColor = largeVideos[largeVideosIndex].color;
-
+        leftBottonRoll();
     }
 );
+
+// right button
+function rightButtonRoll(){
+    // dot change
+    let largeVideoDot = document.querySelector(`.js-item-large-footer-line2-dot-${largeVideosIndex}`);
+    largeVideoDot.classList.remove('item-large-footer-line2-dot-after');
+    largeVideoDot.classList.add('item-large-footer-line2-dot-before');
+    // roll
+    largeVideosIndex ++;
+    largeVideosIndex = largeVideosIndex % largeVideosNumber;
+    // image
+    let largeVideosDiv = document.querySelector('.js-item-large-images');
+    largeVideosDiv.style.transform = `translateX(-${largeVideosIndex * 100}%)`;
+    // dot change
+    largeVideoDot = document.querySelector(`.js-item-large-footer-line2-dot-${largeVideosIndex}`);
+    largeVideoDot.classList.remove('item-large-footer-line2-dot-before');
+    largeVideoDot.classList.add('item-large-footer-line2-dot-after');
+    // title
+    let title = document.querySelector('.js-item-large-footer-line1-title');
+    title.innerHTML = largeVideos[largeVideosIndex].title;
+    // bg
+    let infoDiv = document.querySelector('.item-large-footer');
+    infoDiv.style.backgroundColor = largeVideos[largeVideosIndex].color;
+}
+
 document.querySelector('.js-item-large-footer-line1-button-right').addEventListener(
     'click',() =>{
-        // dot change
-        let largeVideoDot = document.querySelector(`.js-item-large-footer-line2-dot-${largeVideosIndex}`);
-        largeVideoDot.classList.remove('item-large-footer-line2-dot-after');
-        largeVideoDot.classList.add('item-large-footer-line2-dot-before');
-        // roll
-        largeVideosIndex ++;
-        largeVideosIndex = largeVideosIndex % largeVideosNumber;
-        // image
-        let largeVideosDiv = document.querySelector('.js-item-large-images');
-        largeVideosDiv.style.transform = `translateX(-${largeVideosIndex * 100}%)`;
-        // dot change
-        largeVideoDot = document.querySelector(`.js-item-large-footer-line2-dot-${largeVideosIndex}`);
-        largeVideoDot.classList.remove('item-large-footer-line2-dot-before');
-        largeVideoDot.classList.add('item-large-footer-line2-dot-after');
-        // title
-        let title = document.querySelector('.js-item-large-footer-line1-title');
-        title.innerHTML = largeVideos[largeVideosIndex].title;
-        // bg
-        let infoDiv = document.querySelector('.item-large-footer');
-        infoDiv.style.backgroundColor = largeVideos[largeVideosIndex].color;
+        rightButtonRoll();
     }
 );
+
+//设置定时器
+setInterval(rightButtonRoll,5000);
+
+

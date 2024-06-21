@@ -98,7 +98,7 @@ export let largeVideos = [
     {
         img: 'image/item-large-1.avif',
         title: '手工区活动来啦~',
-        color: 'rgb(219 254 224)'
+        color: 'rgb(57 219 243)'
     },
     {
         img: 'image/item-large-2.avif',

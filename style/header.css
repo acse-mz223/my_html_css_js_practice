@@ -14,13 +14,16 @@
 
 }
 
+
 .left-header{
     display: flex;
     flex:1.5;
     background-color: rgb(255, 146, 146);
     justify-content: space-between;
     align-items: center;
+    min-width: 400px;
 }
+
 
 .left-header-icon{
     color: white;
@@ -48,6 +51,7 @@
     flex:1;
     align-items: center;
     justify-content: space-around;
+    min-width: 200px;
 
 
 }
@@ -93,17 +97,19 @@
     flex:35px;
     display: flex;
     justify-content: space-evenly;
+    min-width: 300px;
 }
 
-.right-header svg, .right-header div{
+.right-header svg {
     color: white;
 }
 
-.right-header div{
+.right-header-item{
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s;
+    color: white;
 }
 
 .right-header > div:hover{
@@ -112,11 +118,81 @@
     
 } 
 
+.dynamic{
+    position: relative;
+}
+
+.dynamic:hover .dynamic-hover{
+    display: inline-block;
+}
+
+.dynamic-hover{
+    position: absolute;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    top: 120%;
+    width: 400px;
+    height: 800px;
+    padding: 30px 30px;
+    z-index: 100;
+    box-shadow: 5px 5px 5px rgba(161, 161, 161, 0.48);
+    border: 2px solid rgb(206, 206, 206);
+    overflow-y: scroll;
+}
+
+
+.dynamic-hover-list{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.dynamic-hover-item{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    background-color: rgb(255, 240, 254);
+    justify-content: space-between;
+    
+}
+
+.dynamic-hover-item-user{
+    border: 2px solid white;
+    border-radius: 26px;
+    width: 50px;
+    height: 50px;
+}
+
+.dynamic-hover-item-info{
+    font-size: 14px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: black;
+
+}
+
+.dynamic-hover-item-info-username{
+    color: rgb(135, 135, 135);
+}
+
+
+.dynamic-hover-item-info-state{
+    color: rgb(133, 133, 133);
+}
+
+.dynamic-hover-item-img{
+    width: 100px;
+    border-radius: 10px;
+}
+
 .header-button{
     background-color: rgb(252, 142, 160);
     border: none;
     height: 30px;
     width: 80px;
+    min-width: 80px;
     margin: 0px 5px;
     border-radius: 8px;
 }
